@@ -1,0 +1,99 @@
+@import '../variables';
+@import '../mixin';
+@import url('../fonts/fonts.css');
+
+// 입소자 모집공고
+.recruit-cnt {
+    border-top: 1px solid $b;
+    border-bottom: 1px solid $b;
+    padding: 50px 0;
+}
+
+.recruit-img {
+    @extend %w100;
+
+    img {
+        @extend %w100;
+        overflow: hidden;
+    }
+}
+
+.recruit-download {
+    @extend %w100;
+    text-align: center;
+    margin: 20px auto 0;
+    @extend %flex-center;
+
+    a {
+        background: $r;
+        color: $w;
+        font-size: ($fs + 4px);
+        font-weight: 600;
+        height: 100px;
+        @extend %flex-center;
+        width: 400px;
+    }
+
+    a.recruit-icon {
+        width: 8%;
+        background: #FB643D;
+    }
+
+    i {
+        right: 50px;
+        color: $w;
+        font-size: ($fs + 8px);
+    }
+}
+
+// 입소자 모집공고 끝
+
+// 미디어쿼리
+@include tabL {
+    .recruit-cnt {
+        padding: 4.88vw 0;
+    }
+
+    .recruit-download {
+        a {
+            width: 39.06vw;
+            font-size: 1.95vw;
+            height: 9.77vw;
+
+            i {
+                font-size: 2.34vw;
+            }
+        }
+    }
+}
+
+@include tabS {
+    .recruit-cnt {
+        padding: 37px 0;
+    }
+
+    .recruit-download {
+        a {
+            font-size: ($fs - 1px);
+            height: 75px;
+
+            i {
+                font-size: ($fs + 2px);
+            }
+        }
+    }
+}
+
+@include mobS {
+    .recruit-download {
+        a {
+            width: 187px;
+        }
+
+        a.recruit-icon {
+            width: 37px;
+        }
+    }
+}
+
+// 미디어쿼리 끝

@@ -1,0 +1,299 @@
+@import '../variables';
+@import '../mixin';
+@import url('../fonts/fonts.css');
+
+// 입지
+.location-title {
+    font-weight: 600;
+    margin-bottom: 30px;
+
+    // &:nth-child(2) {
+    //     margin-top: 2.6vw !important;
+    //     margin-bottom: 10px;
+    // }
+}
+
+// h3.location-title {
+//     margin-top: 0 !important;
+// }
+
+p.title {
+    color: $r;
+    font-family: 'Noto SB';
+    margin-top: 0 !important;
+}
+
+.title-pd {
+    padding-top: 2.60vw;
+}
+
+.location-subtitle {
+    line-height: 30px;
+}
+
+.location-cnt {
+    margin: 50px 0 100px;
+}
+
+.location-img {
+    @extend %flex-center;
+    flex-direction: column;
+    margin: 0 auto;
+    @include wh(100%, 700px);
+    overflow: hidden;
+    text-align: center;
+
+    img {
+        @extend %w100;
+    }
+}
+
+.location-list {
+    width: 1300px;
+    margin: 0 auto;
+
+    ul {
+        @extend %w100;
+        border-top: 1px solid $r;
+
+        li {
+            padding: 50px 20px;
+            border-bottom: 1px solid $r;
+
+            @extend %align-center;
+        }
+    }
+}
+
+.location-txt {
+    width: 50%;
+
+    span {
+        @extend %db;
+    }
+
+    span:first-child {
+        font-size: ($fs + 10px);
+        color: $r;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    span:last-child {
+        font-size: ($fs + 1px);
+        line-height: 30px;
+    }
+}
+
+.location-txt {
+    margin: 0 50px;
+}
+
+.location-txt_reverse {
+    flex-direction: row-reverse;
+}
+
+.location-list_img {
+    @extend %flex;
+    gap: 2px;
+    @include wh(70%, 200px);
+    overflow: hidden;
+
+    img {
+        width: 50%;
+
+        &:first-child {
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+        }
+
+        &:last-child {
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+    }
+}
+
+// 입지 끝
+
+// 미디어쿼리
+@include desktop {
+
+    // 입지
+    .location-list {
+        width: 95.17vw;
+
+        ul {
+            li {
+                padding: 3.66vw 20px;
+            }
+        }
+    }
+
+    .location-txt {
+        margin: 0 3.66vw;
+    }
+
+    // 입지 끝
+}
+
+@include pc {
+
+    // 입지
+    .location-list_img {
+        @include wh(65vw, 15.63vw);
+    }
+
+    // 입지 끝
+}
+
+@include tabL {
+
+    // 입지
+    .location-title {
+        margin: 4.88vw 0 2.93vw;
+        font-size: 4.1vw;
+    }
+
+    p.title {
+        margin-top: 4.88vw;
+        font-size: 4.10vw;
+    }
+
+    .location-subtitle {
+        font-size: 1.66vw;
+        line-height: 2.93vw;
+    }
+
+    .location-cnt {
+        margin: 4.88vw 0 9.77vw;
+    }
+
+    .location-list {
+        ul {
+            li {
+                padding: 3.66vw 1.95vw;
+            }
+        }
+    }
+
+    .location-img {
+        height: 68.36vw;
+    }
+
+    .location-txt {
+        span {
+            &:first-child {
+                font-size: 2.54vw;
+                margin-bottom: 1.95vw;
+            }
+
+            &:last-child {
+                font-size: 1.66vw;
+                line-height: 25px;
+            }
+        }
+    }
+
+    // 입지 끝
+}
+
+@include tabS {
+
+    // 입지
+    .location-title {
+
+        &:nth-child(2) {
+            margin-top: 2.6vw !important;
+            margin-bottom: 10px;
+        }
+    }
+
+    .location-subtitle {
+        font-size: ($fs - 3px);
+        line-height: 23px;
+    }
+
+    .location-list {
+        ul {
+            li {
+                flex-direction: column;
+            }
+        }
+    }
+
+    .location-list_img {
+        margin-top: 7px;
+        @include wh(100%, 30vw);
+        gap: 1px;
+
+        img {
+            &:first-child {
+                border-top-left-radius: 6.51vw;
+                border-bottom-left-radius: 6.51vw;
+            }
+
+            &:last-child {
+                border-top-right-radius: 6.51vw;
+                border-bottom-right-radius: 6.51vw;
+            }
+        }
+    }
+
+    .location-txt {
+        margin: 20px 0 0;
+        width: 100% !important;
+        padding-left: 10px;
+
+        span {
+            &:first-child {
+                font-size: ($fs + 4px) !important;
+                margin-bottom: 15px;
+            }
+
+            &:last-child {
+                font-size: ($fs - 3px);
+            }
+        }
+    }
+
+    // 입지 끝
+}
+
+@include mobL {
+
+    // 입지
+
+    p.title {
+        margin-top: 30px;
+    }
+
+    .location-title {
+        font-size: ($fs + 6px);
+        margin: 29px 0 18px;
+    }
+
+    .location-cnt {
+        margin: 29px 0 59px;
+    }
+
+    // 입지 끝
+}
+
+@include mobS {
+
+    // 입지
+    p.title {
+        font-size: ($fs + 4px);
+    }
+
+    .location-txt {
+        span {
+            &:first-child {
+                font-size: $fs;
+            }
+        }
+    }
+
+    // 입지 끝
+}

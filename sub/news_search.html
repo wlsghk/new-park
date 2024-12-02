@@ -1,0 +1,249 @@
+<?php
+session_start();
+include "../config/db.php";
+
+$search = $_GET['search'];
+$searchstring = $_GET['searchstring'];
+
+if(isset($_GET['page'])){
+	$page = $_GET['page'];
+	} else {
+	$page = 1;
+}
+              $sql = "select * from news where $search like '%$searchstring%'";
+			  $result = mysqli_query($con,$sql);
+			  $row_num = mysqli_num_rows($result); //게시판 총 레코드 수
+			  
+              $list = 10; //한 페이지에 보여줄 개수
+              $block_ct = 5; //블록당 보여줄 페이지 개수
+
+              $block_num = ceil($page/$block_ct); // 현재 페이지 블록 구하기
+              $block_start = (($block_num - 1) * $block_ct) + 1; // 블록의 시작번호
+              $block_end = $block_start + $block_ct - 1; //블록 마지막 번호
+
+              $total_page = ceil($row_num / $list); // 페이징한 페이지 수 구하기
+              if($block_end > $total_page) $block_end = $total_page; //만약 블록의 마지박 번호가 페이지수보다 많다면 마지박번호는 페이지 수
+              $total_block = ceil($total_page/$block_ct); //블럭 총 개수
+              $start_num = ($page-1) * $list; //시작번호 (page-1)에서 $list를 곱한다.
+
+               $idNumber = $row_num - ($page-1)*$total_page;
+
+			  $number = $row_num - $start_num;
+						
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- IOS 설정 -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favi/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favi/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favi/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favi/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favi/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favi/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favi/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favi/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favi/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/img/favi/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favi/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favi/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favi/favicon-16x16.png">
+    <link rel="manifest" href="/img/favi/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/img/favi/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- XEIcon -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../css/fonts/fonts.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/gnb.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/top.css">
+    <link rel="stylesheet" href="../css/sub/sub_common.css">
+    <!-- 개별 css -->
+    <link rel="stylesheet" href="../css/sub/notice.css">
+    <title>The New Grey For You!</title>
+</head>
+
+<body>
+    <!-- 전체 레이아웃 -->
+    <div class="wrapper">
+        <!-- gnb 메뉴 -->
+        <? include "../gnb.html"?>
+        <!-- // gnb 메뉴 -->
+        <!-- 헤더 -->
+        <? include "../header.html"?>
+        <!-- // 헤더 -->
+        <!-- 메인 -->
+        <main class="main">
+            <article class="inner">
+                <!-- 공지 -->
+                <section class="notice sub">
+                    <div class="inner">
+                        <h2 class="title">공지사항&뉴스</h2>
+                        <div class="line"></div>
+                        <ul class="notice-select">
+                            <li class="notice-nt">
+                                <a href="notice.html">공지사항</a>
+                            </li>
+                            <li class="notice-news checked">
+                                <a href="news.html">뉴스</a>
+                            </li>
+                        </ul>
+
+                        <!-- 공지사항 게시판 -->
+                        <form action="news_search.html" class="notice-search search-bar" method="get">
+                            <select name="search" id="">
+                                <option value="news_title">제목</option>
+								<option value="news_press">언론</option>
+                                <option value="news_content">내용</option>
+                            </select>
+                            <label for="n_search" class="hidden">뉴스 검색창</label>
+                            <input type="search" name="searchstring" id="n_search">
+                            <label for="submit" class="hidden">뉴스 검색 버튼</label>
+                            <input type="submit" name="" id="n_submit" value="검색" class="pointer">
+                        </form>
+                        <table class="notice-table notice-table_nt">
+                            <tbody>
+							<?php 
+							if ($row_num == 0) {
+							?>
+                                <tr>
+                                    <td colspan="3" class="center notice-none">등록된 글이 없습니다.</td>
+                                </tr>
+							<?php
+							} else {
+							$sql1 = "select * from news where $search like '%$searchstring%' order by news_idx desc limit $start_num, $list";
+							$result1 = mysqli_query($con, $sql1);
+							while($row1 = mysqli_fetch_array($result1)){ 
+							?>
+                                <tr>
+                                    <td>
+										<?php if ($row1['news_top'] == "1") { ?>
+                                        <div class="center">공지</div>
+										<?php
+										} else { ?>
+										<?php echo $number?>
+										<?php
+										}
+										?>
+                                    </td>
+                                    <td class="left">
+                                        <a href="<?php echo $row1['news_link'];?>" target="_blank">
+                                            [<?php echo $row1['news_press'];?>] <?php echo $row1['news_title'];?>
+                                        </a>
+                                        <span><?php echo date("y-m-d",strtotime($row1['news_wdate']))?></span>
+                                    </td>
+                                </tr>
+							<?php
+							$number--;
+								}
+							}
+							?>
+                                
+                            </tbody>
+                        </table>
+                        <!-- 페이지네이션 -->
+                        <div class="pagination">
+						<?php 
+						if($page <= 1) { 
+						?>
+						<?php 
+						} else {
+						?>
+                            <a href='?page=1'>
+                                <i class="fa-solid fa-angles-left"></i>
+                            </a>
+						<?php
+						}
+						if($page <= 1) { 
+						} else {
+						$pre = $page-1;
+						?>
+                            <a href='?page=<?php echo $pre;?>'>
+                                <i class="fa-solid fa-angle-left"></i>
+                            </a>
+						<?php
+						}
+						for($i=$block_start; $i<=$block_end; $i++){ 
+						if($page == $i){ 
+						?>
+                            <span class="checked"><?php echo $i;?></span>
+						<?php
+						} else {
+						?>
+						<a href='?page=<?php echo $i;?>'><span><?php echo $i;?></span></a>
+						 <?php
+							}
+						}
+						if($page >= $total_page){ 
+						}else{
+						$next = $page + 1; 
+						?>
+                        <a href='?page=<?php echo $next;?>'>
+                                <i class="fa-solid fa-angle-right"></i>
+                         </a>
+						 <?php
+						}
+						if($page >= $total_page){
+						?>
+						<?php
+						} else {
+						?>
+                            <a href='?page=<?php echo $total_page;?>'>
+                                <i class="fa-solid fa-angles-right"></i>
+                            </a>
+						<?php
+						}               
+						?>
+                        </div>
+                        <!-- 페이지네이션 -->
+                        <!-- 공지사항 게시판 -->
+
+                        
+                        <!-- 페이지네이션 -->
+                        <!-- // 뉴스 게시판 -->
+                    </div>
+                </section>
+                <!-- // 공지 -->
+            </article>
+        </main>
+        <!-- // 메인 -->
+        <!-- 푸터 -->
+        <? include "../footer.html"?>
+        <!-- // 푸터 -->
+        <!-- 탑 버튼 -->
+        <div class="go-top" id="top-btn">
+            <div class="inner">
+                <a href="#">
+                    <i class="xi-arrow-up"></i>
+                </a>
+            </div>
+        </div>
+        <!-- // 탑 버튼 -->
+    </div>
+    <!-- // 전체 레이아웃 -->
+
+    <!-- jQuery 연결 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- 지역 api -->
+    <script type="application/javascript"
+        src="https://zelkun.tistory.com/attachment/cfile8.uf@99BB7A3D5D45C065343307.js"></script>
+    <!-- top.js 연결 -->
+    <script src="../js/top.js"></script>
+    <!-- notice.js 연결 -->
+    <script src="../js/notice.js"></script>
+    <!-- fontawsome -->
+    <script src="https://kit.fontawesome.com/19d7485b13.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,297 @@
+@import 'variables';
+@import 'mixin';
+@import url('./fonts/fonts.css');
+
+// 헤더
+.header {
+    position: fixed;
+    z-index: 2;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+
+    .inner {
+        @include wh(100vw, 135px);
+
+        .nav {
+            background: $r;
+        }
+    }
+}
+
+.nav-t {
+    position: relative;
+    @include wh(100%, 85px);
+    @extend %flex-center;
+    padding: 5px 3.13vw;
+
+    .logo {
+        width: 200px;
+
+        img {
+            @extend %w100;
+        }
+    }
+}
+
+.ham {
+    color: $w;
+    font-size: ($fs + 10px);
+    position: absolute;
+    right: 1.56vw;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nav-b {
+    @include wh(100%, 50px);
+    // border-bottom: 1px solid #ddd;
+
+    >ul {
+        @extend %flex-center;
+        @extend %h100;
+
+        >li {
+            padding: 0.6vw;
+            @extend %h100;
+            @extend %align-center;
+            border-bottom: 3px solid $r;
+
+            a {
+                font-size: ($fs + 1px);
+                color: #FEF9D9;
+            }
+        }
+
+        >li:first-child {
+            position: relative;
+        }
+
+        >li:hover {
+            border-bottom: 3px solid #FEF9D9;
+
+            // a {
+            //     color: $r;
+            // }
+        }
+    }
+}
+
+.nav-sub {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    text-align: center;
+    @extend %w100;
+    padding: 5px;
+    background: $w;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.15);
+
+
+    li {
+        border-bottom: none;
+
+        a {
+            color: #222 !important;
+            font-size: ($fs - 1px) !important;
+        }
+    }
+}
+
+.nav-m,
+.nav-tb {
+    display: none;
+}
+
+// 헤더 끝
+
+// 미디어쿼리
+@include desktop {
+
+    // 헤더
+    .header {
+        .inner {
+            height: 9.88vw;
+        }
+    }
+
+    .nav-t {
+        height: 6.22vw;
+        // border-bottom: 1px solid #ddd;
+    }
+
+    .nav-b {
+        height: 3.66vw;
+
+        >ul {
+            >li {
+                a {
+                    font-size: $fs;
+                }
+            }
+        }
+    }
+
+    // 헤더 끝
+}
+
+@include pc {
+
+    // 헤더
+    .header {
+        .inner {
+            height: 80px;
+        }
+    }
+
+    .nav-t {
+        height: 80px;
+    }
+
+    .nav-b {
+        ul {
+            li {
+                a {
+                    font-size: 1.25vw;
+                }
+            }
+        }
+    }
+
+    .nav-sub {
+        padding: 0.39vw;
+        top: 3.69vw;
+
+        li {
+            a {
+                font-size: ($fs - 3px) !important;
+            }
+        }
+    }
+
+    // 헤더 끝
+}
+
+@include tabL {
+
+    // 헤더
+    .header {
+        .inner {
+            height: 7.81vw;
+        }
+    }
+
+    .nav-t {
+        height: 7.81vw;
+
+        .logo {
+            width: 19.53vw;
+        }
+    }
+
+    .ham {
+        font-size: 2.54vw;
+    }
+
+    .nav-b {
+        display: none;
+
+        >ul {
+            height: 37px;
+            background: $r;
+
+            li {
+                a {
+                    font-size: $fs;
+                }
+            }
+        }
+    }
+
+    .nav-sub {
+        top: 37px;
+    }
+
+    .nav-tb {
+        display: block;
+    }
+
+    // 헤더 끝
+}
+
+@include tabS {
+
+    // 헤더
+    .header {
+        .inner {
+            height: 60px;
+        }
+    }
+
+    .nav-t {
+        height: 60px;
+
+        .logo {
+            width: 150px;
+        }
+    }
+
+    .ham {
+        font-size: ($fs + 4px);
+    }
+
+    .nav-b {
+        ul {
+            li {
+                a {
+                    font-size: 2.08vw;
+                }
+            }
+        }
+    }
+
+    .nav-sub {
+        li {
+            a {
+                font-size: ($fs - 4px) !important;
+            }
+        }
+    }
+
+    // 헤더 끝
+}
+
+@include mobL {
+
+    // 헤더
+    .nav-b {
+        ul {
+            li {
+                a {
+                    font-size: ($fs - 4px) !important;
+                }
+            }
+        }
+    }
+
+    // 헤더 끝
+}
+
+@include mobS {
+
+    // 헤더
+    .nav-t {
+        justify-content: space-between;
+    }
+
+    .nav-tb {
+        display: none;
+    }
+
+    .nav-m {
+        display: block;
+    }
+
+    // 헤더 끝
+}
+
+// 미디어쿼리 끝

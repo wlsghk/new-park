@@ -1,0 +1,263 @@
+@import url("./fonts/fonts.css");
+.pagination span {
+  display: flex;
+  align-items: center;
+}
+
+.g {
+  color: #258968;
+}
+
+.r {
+  color: #F0532A;
+}
+
+.b {
+  color: #222;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.bold {
+  font-weight: 600 !important;
+}
+
+.title {
+  font-size: 42px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.main {
+  margin-bottom: 120px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.pagination span {
+  display: flex;
+  align-items: center;
+}
+
+.g {
+  color: #258968;
+}
+
+.r {
+  color: #F0532A;
+}
+
+.b {
+  color: #222;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.bold {
+  font-weight: 600 !important;
+}
+
+.title {
+  font-size: 42px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.main {
+  margin-bottom: 120px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+* {
+  font-family: "Noto Sans KR";
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #222;
+  text-decoration: none;
+  list-style: none;
+  letter-spacing: -0.5px;
+}
+
+body {
+  -ms-overflow-style: none;
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  color: inherit;
+}
+
+input,
+textarea,
+select {
+  outline: none;
+  background: #fff;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+span {
+  font-size: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox  */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input::-ms-clear,
+input::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {
+  display: none;
+}
+
+.pagination {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 17px;
+}
+.pagination span {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border: 1px solid #F0532A;
+  color: #F0532A;
+  display: inline-block;
+  margin: 0 2px;
+}
+.pagination span.checked {
+  background: #F0532A;
+  color: #fff;
+}
+.pagination i {
+  cursor: pointer;
+  font-size: 19px;
+  margin: 0 3px;
+}
+.pagination i.fa-angle-left {
+  margin-right: 15px;
+}
+.pagination i.fa-angle-right {
+  margin-left: 15px;
+}
+
+@media (max-width: 1024px) {
+  .main {
+    margin-bottom: 11.72vw !important;
+  }
+  .pagination {
+    margin-top: 4.88vw;
+    font-size: 1.66vw;
+  }
+  .pagination span {
+    width: 2.93vw;
+    height: 2.93vw;
+  }
+  .pagination i {
+    font-size: 1.86vw;
+  }
+  .pagination i.fa-angle-left {
+    margin-right: 1.46vw;
+  }
+  .pagination i.fa-angle-right {
+    margin-left: 1.46vw;
+  }
+}
+@media (max-width: 768px) {
+  .main {
+    margin-bottom: 90px !important;
+  }
+  .pagination {
+    margin-top: 37px;
+    font-size: 13px;
+  }
+  .pagination span {
+    width: 23px;
+    height: 23px;
+  }
+  .pagination i {
+    font-size: 15px;
+  }
+  .pagination i.fa-angle-left {
+    margin-right: 11px;
+  }
+  .pagination i.fa-angle-right {
+    margin-left: 11px;
+  }
+  .scroll-box {
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  .scroll-box::-webkit-scrollbar {
+    height: 6px;
+    display: block;
+  }
+  .scroll-box::-webkit-scrollbar-track {
+    background: #ddd;
+    border-radius: 5px;
+  }
+  .scroll-box::-webkit-scrollbar-thumb {
+    background: #F0532A;
+    border-radius: 10px;
+  }
+  .nowrap {
+    white-space: nowrap;
+  }
+}/*# sourceMappingURL=common.css.map */

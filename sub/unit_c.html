@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- IOS 설정 -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- XEIcon -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../css/fonts/fonts.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/gnb.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/top.css">
+    <link rel="stylesheet" href="../css/sub/sub_common.css">
+    <!-- 개별 css -->
+    <link rel="stylesheet" href="../css/sub/unit.css">
+    <title>The New Grey For You!</title>
+</head>
+
+<body>
+    <!-- 전체 레이아웃 -->
+    <div class="wrapper">
+
+        <!-- gnb 메뉴 -->
+        <? include "../gnb.html"?>
+        <!-- // gnb 메뉴 -->
+        <!-- 헤더 -->
+        <? include "../header.html"?>
+        <!-- // 헤더 -->
+        <!-- 메인 -->
+        <main class="main">
+            <article class="inner">
+                <!-- 비주얼 -->
+                <section class="subV">
+                    <div class="inner">
+                        <div class="subV-img">
+                            <picture>
+                                <source media="(max-width: 600px)" srcset="../img/unit-m.jpg">
+                                <img src="../img/unit.jpg" alt="unit 이미지">
+                            </picture>
+                            <!-- 스크롤 유도 -->
+                            <div class="scroll">
+                                <div class="scroll-down">
+                                </div>
+                                <p>scroll</p>
+                            </div>
+                            <!-- // 스크롤 유도 -->
+                        </div>
+                    </div>
+                </section>
+                <!-- // 비주얼 -->
+                <!-- unit -->
+                <section class="unit sub">
+                    <div class="inner">
+                        <h2 class="title unit-title">
+                            THE UNIT
+                        </h2>
+                        <div class="line"></div>
+                        <div class="unit-list">
+                            <ul class="unit-list_select">
+                                <li>
+                                    <a href="./unit.html">A Type</a>
+                                </li>
+                                <li>
+                                    <a href="./unit_b.html">B Type</a>
+                                </li>
+                                <li class="checked">
+                                    <a href="./unit_c.html">C Type</a>
+                                </li>
+                            </ul>
+
+                            <ul class="unit-list_op" id="content-area">
+                                <li class="checked">
+                                    <a href="#">평면도</a>
+                                </li>
+                                <li>
+                                    <a href="#">ISO</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="unit-cnt cnt-c">
+                            <h3 class="title-1">단위세대 평면도 C Type</h3>
+                            <h3 class="title-2 hidden">단위세대 ISO C Type</h3>
+                            <div class="unit-info info-1">
+                                <div class="unit-txt">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <th colspan="3" class="th-title">104㎡ 13세대</th>
+                                            </tr>
+                                            <tr>
+                                                <th>전용면적</th>
+                                                <td>68.59㎡</td>
+                                                <td>20.74평</td>
+                                            </tr>
+                                            <tr>
+                                                <th>공용면적</th>
+                                                <td>36.00㎡</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>공급면적</th>
+                                                <td>104.57㎡</td>
+                                                <td>31.64평</td>
+                                            </tr>
+                                            <tr>
+                                                <th>부대복리시설</th>
+                                                <td>24.98㎡</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>지하주차장/기전실</th>
+                                                <td>29.63㎡</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>계약면적</th>
+                                                <td>159.19㎡</td>
+                                                <td>48.16평</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="unit-detail">
+                                        <img src="../img/cType-detail.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="unit-img">
+                                    <img src="../img/cType-01.png" alt="">
+                                </div>
+                            </div>
+                            <div class="unit-info info-2 hidden">
+                                <div class="unit-txt">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th width="10%">구분</th>
+                                                <th>가구/마감재</th>
+                                                <th>가전기기</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td rowspan="10" class="td-b center">기본제공</td>
+                                                <td>현관바닥 포셀린타일,신발장, 벤치형보조의자</td>
+                                                <td>Haatz 렌지후드(아일랜드형)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>현관 3연동 슬라이딩 중문</td>
+                                                <td>Haatz 인덕션 3구</td>
+                                            </tr>
+                                            <tr>
+                                                <td>아일랜드형 주방, 상판 및 벽 인조대리석, 아트월</td>
+                                                <td>삼성빌트인 냉장고</td>
+                                            </tr>
+                                            <tr>
+                                                <td>드레스실 파우더 가구 및 시스템 가구</td>
+                                                <td>삼성빌트인 냉동고</td>
+                                            </tr>
+                                            <tr>
+                                                <td>의자2, 쇼파1, 사이드 및 티테이블1</td>
+                                                <td>삼성빌트인 드럼 세탁기/건조기</td>
+                                            </tr>
+                                            <tr>
+                                                <td>광폭진마루바닥, 욕실 및 발코니 논슬립타일</td>
+                                                <td>삼성 65인치 TV</td>
+                                            </tr>
+                                            <tr>
+                                                <td>샤워파티션, 샤워실안전바</td>
+                                                <td>삼성 23L 전자레인지</td>
+                                            </tr>
+                                            <tr>
+                                                <td>거실간접조명우물천정, 내실간접조명, LED조명</td>
+                                                <td>삼성시스템 에어컨(거실, 내실)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>발코니 프라이버시 루바 설치, 강화유리난간대</td>
+                                                <td>13인치 고급형 월패드</td>
+                                            </tr>
+                                            <tr>
+                                                <td>-</td>
+                                                <td>하이브리드 환기 시스템 창호
+                                                </td>
+                                            </tr>
+                                            <!-- <tr>
+                                                <td colspan="3" class="center td-last">침대 프레임부터 식탁까지 모두 기본 제공하는 풀퍼니시드 옵션
+                                                </td>
+                                            </tr> -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="unit-img">
+                                    <img src="../img/cType-02.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- // unit -->
+            </article>
+        </main>
+        <!-- // 메인 -->
+        <!-- 푸터 -->
+        <? include "../footer.html"?>
+        <!-- // 푸터 -->
+        <!-- 탑 버튼 -->
+        <div class="go-top" id="top-btn">
+            <div class="inner">
+                <a href="#">
+                    <i class="xi-arrow-up"></i>
+                </a>
+            </div>
+        </div>
+        <!-- // 탑 버튼 -->
+    </div>
+    <!-- // 전체 레이아웃 -->
+
+    <!-- jQuery 연결 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- top.js 연결 -->
+    <script src="../js/top.js"></script>
+    <!-- unit.js 연결 -->
+    <script src="../js/unit.js"></script>
+</body>
+
+</html>

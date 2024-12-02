@@ -1,0 +1,190 @@
+@import 'variables';
+@import 'mixin';
+@import url('./fonts/fonts.css');
+
+// gnb 메뉴
+.black-box {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include wh(100%, 100%);
+    z-index: 3;
+}
+
+.gnb {
+    position: fixed;
+    z-index: 4;
+    @include wh(400px, 100vh);
+    background: $w;
+    right: 0;
+}
+
+.gnb-tab {
+    @extend %w100;
+    @extend %align-center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+
+    a {
+        width: 180px;
+
+        img {
+            @extend %w100;
+        }
+    }
+
+    i {
+        font-size: ($fs + 10px);
+    }
+}
+
+.gnb-menu {
+    >li {
+        >a {
+            @extend %w100;
+            @extend %align-center;
+            justify-content: space-between;
+            border-bottom: 1px solid #ddd;
+            padding: 20px;
+        }
+
+        >ul {
+            @include grid(grid, repeat(2, 1fr));
+            padding: 0 20px;
+
+            li {
+                padding: 10px 0;
+
+                a {
+                    font-size: ($fs - 2px);
+                }
+
+                a:hover {
+                    color: $r;
+                }
+            }
+
+            li:nth-child(even) {
+                a {
+                    padding-left: 15px;
+                }
+            }
+        }
+
+        .gnb-img {
+            display: block;
+            padding: 0 !important;
+            @include wh(100%, 200px);
+            overflow: hidden;
+
+            li {
+                @extend %w100;
+
+                img {
+                    @extend %w100;
+                }
+            }
+        }
+
+        i {
+            font-weight: 600;
+        }
+    }
+}
+
+@keyframes moveLeft {
+    0% {
+        right: -400px;
+    }
+
+    100% {
+        right: 0;
+    }
+}
+
+@keyframes moveRight {
+    0% {
+        right: 0;
+    }
+
+    100% {
+        right: -400px;
+    }
+}
+
+// gnb 메뉴 끝
+
+// 미디어쿼리
+@include tabL {
+
+    // gnb 메뉴
+    .gnb {
+        width: 39.06vw;
+    }
+
+    .gnb-tab {
+        padding: 10px 1.95vw;
+
+        i {
+            font-size: 2.54vw;
+        }
+    }
+
+    .gnb-menu {
+        >li {
+            >a {
+                padding: 1.95vw;
+                font-size: $fs;
+            }
+
+            >ul {
+                li {
+                    a {
+                        font-size: ($fs - 3px);
+                    }
+                }
+            }
+
+            .gnb-img {
+                height: 19.53vw;
+            }
+        }
+    }
+
+    // gnb 끝
+}
+
+
+@include tabS {
+
+    // gnb 메뉴
+    .gnb {
+        width: 300px;
+    }
+
+    .gnb-tab {
+        padding: 10px 15px;
+
+        i {
+            font-size: ($fs + 4px);
+        }
+    }
+
+    .gnb-menu {
+        >li {
+            >a {
+                padding: 15px;
+            }
+
+            .gnb-img {
+                height: 150px;
+            }
+        }
+    }
+
+    // gnb 메뉴 끝
+}
+
+// 미디어쿼리 끝

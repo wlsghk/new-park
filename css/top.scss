@@ -1,0 +1,201 @@
+@import 'variables';
+@import 'mixin';
+@import url('./fonts/fonts.css');
+
+// 퀵바
+.quick {
+    display: none;
+    @include wh(80px, 85px);
+    background: #FAE100;
+    position: fixed;
+    right: 0;
+    bottom: 100px;
+    z-index: 11;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+
+    .inner {
+        @extend %wh100;
+
+        a {
+            @extend %wh100;
+            @extend %flex-center;
+            flex-direction: column;
+
+            img {
+                width: 50%;
+            }
+
+            p {
+                font-size: ($fs - 3px);
+                text-align: center;
+                line-height: 1;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+// 퀵바
+
+// 탑 버튼
+.go-top {
+    display: none;
+    @include wh(80px, 80px);
+    background: $m;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    border-radius: 30px 0px 0px;
+    z-index: 11;
+
+    .inner {
+        @extend %wh100;
+
+        a {
+            @extend %wh100;
+            @extend %flex-center;
+
+            i {
+                color: $w;
+                font-size: ($fs + 10px);
+            }
+        }
+    }
+}
+
+// 탑 버튼 끝
+
+// 미디어쿼리
+
+@include pc {
+
+    // 퀵바
+    .quick {
+        @include wh(6.25vw, 6.64vw);
+
+        .inner {
+            a {
+                p {
+                    font-size: 1.02vw;
+                }
+            }
+        }
+    }
+
+    // 퀵바
+
+    // 탑 버튼
+    .go-top {
+        @include wh(6.25vw, 6.25vw);
+
+        .inner {
+            a {
+                i {
+                    font-size: 2.03vw;
+                }
+            }
+        }
+    }
+
+    // 탑 버튼 끝
+}
+
+@include tabL {
+
+    // 퀵바
+    .quick {
+        @include wh(64px, 66px);
+        bottom: 9.77vw;
+
+        .inner {
+            a {
+                p {
+                    font-size: ($fs - 6px);
+                }
+            }
+        }
+    }
+
+    // 퀵바
+
+
+    // 탑 버튼
+    .go-top {
+        @include wh(64px, 64px);
+
+        .inner {
+            a {
+                i {
+                    font-size: ($fs + 5px);
+                }
+            }
+        }
+    }
+
+    // 탑 버튼 끝
+}
+
+@include tabS {
+
+    // 퀵바
+    .quick {
+        @include wh(8.33vw, 8.59vw);
+    }
+
+    // 퀵바
+
+    // 탑 버튼
+    .go-top {
+        @include wh(8.34vw, 8.34vw);
+
+        .inner {
+            a {
+                i {
+                    font-size: 2.74vw;
+                }
+            }
+        }
+    }
+
+    // 탑 버튼 끝
+}
+
+@include mobL {
+
+    // 퀵바
+    .quick {
+        @include wh(48px, 49px);
+        bottom: 60px;
+
+        .inner {
+            a {
+                p {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    // 퀵바
+
+    // 탑 버튼
+    .go-top {
+        @include wh(50px, 50px);
+
+        .inner {
+            a {
+                i {
+                    font-size: $fs;
+                }
+            }
+        }
+    }
+
+    // 탑 버튼 끝
+}
+
+@include mobS {
+}
+
+// 미디어쿼리 끝

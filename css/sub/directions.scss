@@ -1,0 +1,234 @@
+@import '../variables';
+@import '../mixin';
+@import url('../fonts/fonts.css');
+
+// 오시는 길
+.directions {
+    padding-top: 200px;
+    margin: 0 auto;
+    width: 1300px;
+
+    .title {
+        font-weight: 600;
+    }
+}
+
+.directions-cnt {
+    @extend %flex-center;
+    width: 100%;
+
+    >img {
+        border: 1px solid $r;
+        width: 50%;
+    }
+
+    a {
+        margin-top: 20px;
+        width: 50%;
+        background: $w;
+        padding: 10px;
+        color: $r;
+        font-weight: 600;
+    }
+}
+
+.directions-info {
+    @include wh(30%, 426.84px);
+    background: $r;
+    text-align: center;
+    @extend %flex-center;
+    flex-direction: column;
+
+    >img {
+        width: 70%;
+    }
+
+    address {
+        font-style: normal;
+
+        strong {
+            font-weight: 500;
+            color: $w;
+            font-size: ($fs + 4px);
+        }
+    }
+
+    h2 {
+        margin-top: 20px;
+        font-size: ($fs + 10px);
+        color: $w;
+        font-weight: 500;
+    }
+
+    .call {
+        font-size: ($fs + 14px);
+        font-weight: 600;
+    }
+}
+
+// 오시는 길 끝
+
+// 미디어쿼리
+@include desktop {
+    .directions {
+        width: 95.17vw;
+        padding-top: 19.53vw;
+    }
+
+    .directions-info {
+        height: 31.25vw;
+
+        address {
+            strong {
+                font-size: 1.95vw;
+            }
+        }
+
+        h2 {
+            font-size: 2.54vw;
+            margin-top: 1.95vw;
+        }
+
+        .call {
+            font-size: 2.93vw;
+        }
+    }
+
+    .directions-cnt {
+        a {
+            padding: 0.98vw;
+            font-size: 1.56vw;
+            margin-top: 1.95vw;
+        }
+    }
+}
+
+@include tabL {
+    .directions {
+        .title {
+            font-size: 3.71vw;
+        }
+    }
+}
+
+@include tabS {
+    .directions-cnt {
+        flex-direction: column;
+        gap: 10px;
+
+        >img {
+            width: 100%;
+        }
+
+        a {
+            padding: 10px;
+            font-size: $fs;
+            width: 40%;
+            margin-top: 20px;
+        }
+    }
+
+    .directions-info {
+        width: 100%;
+        height: 62.50vw;
+
+        address {
+            strong {
+                font-size: ($fs + 4px);
+            }
+        }
+
+        h2 {
+            margin-top: 20px;
+            font-size: ($fs + 10px);
+        }
+
+        .call {
+            font-size: ($fs + 14px);
+        }
+    }
+}
+
+@include mobL {
+    .directions {
+        padding-top: 117px;
+
+        .title {
+            font-size: ($fs + 6px);
+        }
+    }
+
+    .directions-cnt {
+        a {
+            padding: 1.67vw;
+            font-size: 2.67vw;
+            margin-top: 3.33vw;
+        }
+    }
+
+    .directions-info {
+        address {
+            strong {
+                font-size: 3.33vw;
+            }
+        }
+
+        h2 {
+            margin-top: 3.33vw;
+            font-size: 4.33vw;
+        }
+
+        .call {
+            font-size: 5vw;
+        }
+    }
+}
+
+@include mobS {
+    .directions-cnt {
+        a {
+            padding: 8px;
+            font-size: ($fs - 3px);
+        }
+    }
+
+    .directions-info {
+        height: 300px;
+
+        address {
+            strong {
+                font-size: $fs;
+            }
+        }
+
+        h2 {
+            font-size: ($fs + 5px);
+        }
+
+        .call {
+            font-size: ($fs + 8px);
+        }
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .directions-info {
+        height: 83.33vw;
+
+        address {
+            strong {
+                font-size: 4.44vw;
+            }
+        }
+
+        h2 {
+            font-size: 5.83vw;
+        }
+
+        .call {
+            font-size: 6.67vw;
+        }
+    }
+}
+
+// 미디어쿼리 끝

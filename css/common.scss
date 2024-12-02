@@ -1,0 +1,218 @@
+@charset 'UTF-8';
+
+@import 'variables';
+@import 'mixin';
+@import url('./fonts/fonts.css');
+
+* {
+    font-family: $mf;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: $fs;
+    color: $b;
+    text-decoration: none;
+    list-style: none;
+    letter-spacing: -0.5px;
+}
+
+body {
+    -ms-overflow-style: none;
+}
+
+body,
+html {
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+a {
+    color: inherit;
+}
+
+input,
+textarea,
+select {
+    outline: none;
+    background: $w;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+span {
+    font-size: inherit;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+// input number 화살표 삭제
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox  */
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+// input number 화살표 삭제 끝
+
+input::-ms-clear,
+input::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {
+    display: none;
+}
+
+// 페이지네이션
+.pagination {
+    margin-top: 50px;
+    text-align: center;
+    font-size: ($fs + 1px);
+
+    span {
+        @include wh(30px, 30px);
+        cursor: pointer;
+        border: 1px solid $r;
+        color: $r;
+        @extend %align-center;
+        display: inline-block;
+        margin: 0 2px;
+    }
+
+    span.checked {
+        background: $r;
+        color: $w;
+    }
+
+    i {
+        cursor: pointer;
+        font-size: ($fs + 3px);
+        margin: 0 3px;
+    }
+
+    i.fa-angle-left {
+        margin-right: 15px;
+    }
+
+    i.fa-angle-right {
+        margin-left: 15px;
+    }
+}
+
+// 페이지네이션 끝
+
+// 미디어쿼리
+@include tabL {
+
+    // 메인
+    .main {
+        margin-bottom: 11.72vw !important;
+    }
+
+    // 메인 끝
+
+    // 페이지네이션
+    .pagination {
+        margin-top: 4.88vw;
+        font-size: 1.66vw;
+
+        span {
+            @include wh(2.93vw, 2.93vw);
+        }
+
+        i {
+            font-size: 1.86vw;
+        }
+
+        i.fa-angle-left {
+            margin-right: 1.46vw;
+        }
+
+        i.fa-angle-right {
+            margin-left: 1.46vw;
+        }
+    }
+
+    // 페이지네이션 끝
+}
+
+@include tabS {
+
+    // 메인
+    .main {
+        margin-bottom: 90px !important;
+    }
+
+    // 메인 끝
+    // 페이지네이션
+    .pagination {
+        margin-top: 37px;
+        font-size: ($fs - 3px);
+
+        span {
+            @include wh(23px, 23px);
+        }
+
+        i {
+            font-size: ($fs - 1px);
+        }
+
+        i.fa-angle-left {
+            margin-right: 11px;
+        }
+
+        i.fa-angle-right {
+            margin-left: 11px;
+        }
+    }
+
+    // 페이지네이션 끝
+
+    // 테이블 스크롤 박스
+    .scroll-box {
+        overflow-x: auto;
+        padding-bottom: 10px;
+
+        &::-webkit-scrollbar {
+            height: 6px;
+            display: block;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #ddd;
+            border-radius: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $r;
+            border-radius: 10px;
+        }
+    }
+
+    .nowrap {
+        white-space: nowrap;
+    }
+
+    // 테이블 스크롤 박스 끝
+}
+
+// 미디어쿼리 끝

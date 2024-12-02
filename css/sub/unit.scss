@@ -1,0 +1,558 @@
+@import '../variables';
+@import '../mixin';
+@import url('../fonts/fonts.css');
+
+// unit
+.unit-title {
+    font-weight: 600;
+}
+
+.unit-list_select {
+    @extend %flex-center;
+
+    li {
+        @include wh(250px, 60px);
+        background: #f5f5f5;
+        @extend %flex-center;
+        border: 1px solid $w;
+
+        a {
+            font-size: ($fs + 2px);
+        }
+    }
+
+    li.checked {
+        background: $r;
+
+        a {
+            color: $w;
+        }
+    }
+}
+
+.unit-list_op {
+    @extend %flex-center;
+    margin-top: 50px;
+    gap: 10px;
+
+    li {
+        width: 150px;
+        text-align: center;
+        padding: 5px 30px;
+        border-bottom: 3px solid #999;
+
+        a {
+            font-size: ($fs + 1px);
+            color: #999;
+        }
+    }
+
+    li.checked {
+        border-bottom: 3px solid $m;
+
+        a {
+            color: $m;
+            font-weight: 600;
+        }
+    }
+}
+
+.unit-cnt {
+    margin-top: 100px;
+
+    h3 {
+        font-size: ($fs + 10px);
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    h3.title-2 {
+        width: 75%;
+    }
+}
+
+.unit-info {
+    @extend %justify-center;
+    gap: 10px;
+
+    table {
+        margin-top: 100px;
+        border-top: 1px solid $r;
+        border-bottom: 1px solid $r;
+
+        th,
+        td {
+            padding: 13px;
+            font-size: ($fs + 1px);
+        }
+    }
+}
+
+.info-1 {
+    table {
+        width: 90%;
+
+        tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:last-child {
+            border-bottom: none;
+        }
+
+        .th-title {
+            font-size: ($fs + 4px);
+            background: #f8f8f8;
+        }
+    }
+
+    .unit-detail {
+        width: 90%;
+        margin: 20px auto 0;
+
+        img {
+            width: 90%;
+        }
+    }
+
+    .unit-img {
+        margin-top: 105px;
+        @include wh(35%, 700px);
+        @extend %justify-center;
+        overflow: hidden;
+
+        img {
+            height: 100%;
+        }
+    }
+}
+
+.info-2 {
+    table {
+        @extend %w100;
+
+        th {
+            background: #f8f8f8;
+        }
+
+        .td-b {
+            background: #ccc;
+
+        }
+
+        .td-last {
+            background: $b;
+            color: $w;
+        }
+    }
+
+    .unit-txt {
+        width: 35%;
+    }
+
+    .unit-img {
+        width: 40%;
+        margin-top: 100px;
+        height: 665px;
+        overflow: hidden;
+        text-align: center;
+
+        img {
+            width: 98%;
+            cursor: pointer;
+        }
+    }
+
+    .unit-img.img-b {
+        height: 740px;
+    }
+
+    .unit-img.img-c {
+        height: 715px;
+    }
+}
+
+.unit-slide {
+    @extend %align-center;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .img-up {
+        @include wh(100%, 84%);
+        overflow: hidden;
+    }
+
+    .img-down {
+        width: 97%;
+        height: 15%;
+        @extend %flex-center;
+
+        img {
+            height: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
+}
+
+.swiper {
+    @extend %wh100;
+}
+
+.swiper-slide {
+    text-align: center;
+    @extend %flex-center;
+}
+
+.swiper-slide {
+    img {
+        @extend %db;
+        @extend %wh100;
+        object-fit: cover;
+    }
+}
+
+.swiper {
+    @include wh(100%, 300px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.swiper-slide {
+    background-size: cover;
+    background-position: center;
+}
+
+.mySwiper2 {
+    @include wh(100%, 80%);
+}
+
+.mySwiper {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+.mySwiper {
+    .swiper-slide {
+        @include wh(25%, 100%);
+        opacity: 0.4;
+    }
+}
+
+.mySwiper .swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+.swiper-slide img {
+    @extend %db;
+    @extend %wh100;
+    object-fit: cover;
+}
+
+.unit-txt {
+    width: 35%;
+}
+
+// unit 끝
+
+// 미디어쿼리
+@media screen and (max-width: 1919px) {
+
+    // unit
+    .unit-info {
+        gap: 0px;
+    }
+
+    .info-2 {
+        flex-direction: column;
+
+        .unit-txt {
+            width: 90%;
+            margin: 0 auto;
+
+            table {
+                margin-top: 20px;
+            }
+        }
+
+        .unit-img {
+            @include wh(90%, 100%);
+            margin: 20px auto 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .unit-img.img-b,
+        .unit-img.img-c {
+            height: 100%;
+        }
+    }
+
+    .unit-cnt {
+        h3.title-2 {
+            width: 90%;
+        }
+    }
+
+    .info-2 {
+        .unit-img {
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .unit-slide {
+        .img-up {
+            margin-bottom: 5px;
+        }
+
+        .img-down {
+            @include wh(100%, 13.03vw);
+        }
+    }
+
+    // unit 끝
+}
+
+@include desktop {
+
+    // unit
+    .info-1 {
+
+        .unit-img {
+            height: 51.24vw;
+        }
+    }
+
+    // unit 끝
+}
+
+@include pc {
+
+    // unit
+    .info-1 {
+        table {
+
+            th,
+            td {
+                padding: 1.02vw;
+            }
+        }
+    }
+
+    .info-2 {
+        table {
+
+            th,
+            td {
+                padding: 1.02vw;
+            }
+        }
+    }
+
+
+    // unit 끝
+}
+
+@include tabL {
+
+    // unit
+    .unit-title {
+        font-size: 3.71vw;
+    }
+
+    .unit-list_select {
+        li {
+            @include wh(24.41vw, 5.86vw);
+
+            a {
+                font-size: 1.76vw;
+            }
+        }
+    }
+
+    .unit-list_op {
+        li {
+            width: 14.65vw;
+
+            a {
+                font-size: 1.66vw;
+            }
+        }
+    }
+
+    .unit-info {
+        table {
+            margin-top: 9.77vw;
+        }
+    }
+
+    .info-1,
+    .info-2 {
+        table {
+            .th-title {
+                font-size: 1.95vw;
+            }
+
+            th,
+            td {
+                font-size: 1.66vw;
+            }
+        }
+    }
+
+    .unit-cnt {
+        margin-top: 9.77vw;
+
+        h3 {
+            font-size: 2.54vw;
+        }
+    }
+
+    // unit 끝
+}
+
+@include tabS {
+
+    // unit
+
+    .unit-list_select {
+        li {
+            a {
+                font-size: ($fs - 2px);
+            }
+        }
+    }
+
+    .unit-list_op {
+        li {
+            width: 113px;
+
+            a {
+                font-size: ($fs - 3px);
+            }
+        }
+    }
+
+    .unit-cnt {
+        margin-top: 75px;
+
+        h3,
+        h3.title-2 {
+            font-size: ($fs + 2px);
+            width: 90%;
+        }
+    }
+
+    .info-1,
+    .info-2 {
+        table {
+            width: 100%;
+        }
+    }
+
+    .info-1 {
+        flex-direction: column;
+        align-items: center;
+
+        table {
+            margin: 0 auto;
+
+            .th-title {
+                font-size: ($fs - 1px);
+            }
+
+            th,
+            td {
+                font-size: ($fs - 3px);
+                padding-top: 8px;
+                padding-bottom: 8px;
+            }
+        }
+
+        .unit-detail {
+            display: flex;
+            justify-content: center;
+        }
+
+        .unit-img {
+            margin-top: 20px;
+            width: 78% !important;
+            height: 100.91vw !important;
+        }
+    }
+
+    .info-2 {
+        .unit-txt {
+            width: 90%;
+        }
+
+        table {
+            margin: 0 auto;
+
+            .th-title {
+                font-size: ($fs - 1px);
+            }
+
+            th,
+            td {
+                font-size: ($fs - 3px);
+                padding-top: 8px;
+                padding-bottom: 8px;
+            }
+        }
+    }
+
+    .unit-txt {
+        margin-top: 20px;
+        width: 90%;
+    }
+
+    // unit 끝
+}
+
+@include mobL {
+
+    // unit
+    .unit-title {
+        font-size: ($fs + 6px);
+    }
+
+    .unit-list_select {
+        li {
+            height: 35px;
+        }
+    }
+
+    .unit-list_op {
+        li {
+            width: 18.83vw;
+            padding: 5px 5vw;
+        }
+    }
+
+    // unit 끝
+}
+
+@include mobS {
+
+    // unit
+    .unit-list_select {
+        li {
+            width: 117px;
+        }
+    }
+
+    .unit-list_op {
+        li {
+            width: 90px;
+            padding: 5px 24px;
+        }
+    }
+
+    // unit 끝
+}
+
+// 미디어쿼리 끝

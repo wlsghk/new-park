@@ -1,0 +1,228 @@
+@import '../variables';
+@import '../mixin';
+@import url('../fonts/fonts.css');
+
+// 개요
+.summary {
+    p.title {
+        font-weight: 600;
+    }
+}
+
+.summary-title {
+    margin-bottom: 30px;
+    color: $r;
+    margin-top: 0;
+    font-family: 'Noto SB';
+}
+
+.summary-logo {
+    @extend %justify-center;
+    margin-bottom: 100px;
+
+    img {
+        width: 350px;
+    }
+}
+
+.summary-cnt {
+    @extend %flex-center;
+    flex-direction: column;
+}
+
+.summary-img {
+    width: 1300px;
+    height: 750px;
+    overflow: hidden;
+    @extend %flex-center;
+    position: relative;
+
+    img {
+        @extend %wh100;
+    }
+}
+
+.summary-info {
+    width: 1300px;
+    height: 500px;
+    // background: #f8f8f8;
+    @extend %flex-center;
+    flex-direction: column;
+
+    h3 {
+        font-size: ($fs + 10px);
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
+    table {
+        width: 80%;
+
+        tbody {
+            border-top: 1px solid $r;
+            border-bottom: 1px solid $r;
+
+            tr {
+                border-bottom: 1px solid #ddd;
+
+                th,
+                td {
+                    padding: 20px;
+                    font-size: ($fs + 1px);
+                }
+
+                // th {
+                //     border-right: 1px solid #ddd;
+                // }
+            }
+
+            tr:last-child {
+                border: none;
+            }
+        }
+    }
+}
+
+// 개요 끝
+
+// 미디어쿼리
+@include desktop {
+
+    // 개요
+    .summary-img {
+        @include wh(95.17vw, 54.90vw);
+    }
+
+    // 개요 끝
+}
+
+@include pc {
+
+    // 개요
+    .summary-info {
+        table {
+            width: 81.25vw;
+
+            tbody {
+                tr {
+
+                    th,
+                    td {
+                        padding: 1.56vw;
+                    }
+                }
+            }
+        }
+    }
+
+    // 개요 끝
+}
+
+@include tabL {
+
+    // 개요
+    p.title {
+        margin-top: 4.88vw;
+    }
+
+    p.title,
+    .summary-title {
+        font-size: 4.10vw;
+    }
+
+    .summary-logo {
+        margin-bottom: 9.77vw;
+
+        img {
+            width: 34.18vw;
+        }
+    }
+
+    .summary-info {
+        @include wh(126.95vw, 48.83vw);
+
+        h3 {
+            font-size: 2.54vw;
+            margin: 4.88vw 0 2.93vw;
+        }
+
+        table {
+            tbody {
+                tr {
+
+                    th,
+                    td {
+                        font-size: 1.66vw;
+                    }
+                }
+            }
+        }
+    }
+
+    // 개요 끝
+}
+
+@include tabS {
+
+    // 개요
+
+    .summary-logo {
+        img {
+            width: 263px;
+        }
+    }
+
+    .summary-info {
+        @include wh(975px, 375px);
+
+        h3 {
+            font-size: ($fs + 4px);
+        }
+
+        table {
+            tbody {
+                tr {
+
+                    th,
+                    td {
+                        font-size: ($fs - 3px);
+                    }
+                }
+            }
+        }
+    }
+
+    // 개요 끝
+}
+
+@include mobL {
+
+    // 개요
+
+    p.title {
+        margin-top: 30px;
+        font-size: ($fs + 6px);
+    }
+
+    .summary-info {
+        h3 {
+            margin-right: 0;
+            margin-left: 0;
+            margin-bottom: 18px;
+        }
+    }
+
+    // 개요 끝
+}
+
+@include mobS {
+
+    // 개요
+    .summary-title {
+        font-size: ($fs + 4px);
+    }
+
+    // 개요 끝
+}
+
+// 미디어쿼리 끝

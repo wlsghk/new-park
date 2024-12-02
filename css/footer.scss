@@ -1,0 +1,223 @@
+@import 'variables';
+@import 'mixin';
+@import url('./fonts/fonts.css');
+
+// 푸터
+
+.footer {
+    @include wh(100%, 270px);
+    margin: 0 auto;
+    border-top: 1px solid #ddd;
+    @extend %align-center;
+    justify-content: center;
+
+    .inner {
+        width: 95%;
+        height: 100%;
+        @extend %align-center;
+        justify-content: space-between;
+
+        strong {
+            font-weight: 400;
+            font-size: ($fs - 4px);
+        }
+    }
+}
+
+.footer-card {
+    @extend %wh100;
+    @extend %justify-center;
+    flex-direction: column;
+}
+
+.footer-info {
+    @extend %align-center;
+    justify-content: space-between;
+
+    strong {
+        color: #777;
+    }
+}
+
+.footer-logo {
+    @extend %align-center;
+}
+
+.footer-logo_d,
+.footer-logo_m {
+    @extend %align-center;
+}
+
+.footer-logo_m {
+    margin-right: 10px;
+
+    .footer-logo_img {
+        width: 130px;
+    }
+}
+
+.footer-logo_d {
+    .footer-logo_img {
+        @extend %flex;
+        width: 60px;
+    }
+}
+
+.footer-logo_img {
+    margin-left: 5px;
+
+    img {
+        @extend %w100;
+    }
+}
+
+.footer-txt {
+    margin-top: 20px;
+
+    strong {
+        color: $b;
+    }
+
+    strong {
+        &::after {
+            content: '|';
+            padding: 10px;
+        }
+    }
+
+    strong:last-of-type {
+        &::after {
+            content: '';
+        }
+    }
+
+    p {
+        margin-top: 10px;
+        color: #999;
+        font-size: ($fs - 4px);
+    }
+}
+
+.footer-call {
+    @extend %flex;
+    align-items: flex-end;
+
+    address {
+        font-size: ($fs + 8px);
+        color: $r;
+        font-style: normal;
+    }
+}
+
+// 푸터 끝
+
+// 미디어쿼리
+@include tabL {
+
+    // 푸터
+    .footer-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-txt {
+        margin-top: 1.95vw;
+    }
+
+    // 푸터 끝
+}
+
+@include tabS {
+
+    // 푸터
+    .footer {
+        height: 360px;
+
+        .inner {
+            strong {
+                &::after {
+                    padding: 1.3vw;
+                }
+            }
+        }
+    }
+
+    .footer-logo {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+        .footer-logo_m {
+            .footer-logo_img {
+                width: 100px;
+            }
+        }
+    
+        .footer-logo_d {
+            .footer-logo_img {
+                width: 50px;
+            }
+        }
+
+    .footer-call {
+        img {
+            @include wh(4.69vw, 4.17vw);
+        }
+
+        address {
+            font-size: 3.13vw;
+        }
+    }
+
+    // 푸터 끝
+}
+
+@include mobL {
+
+    // 푸터
+
+    .footer-call {
+        img {
+            @include wh(28px, 25px);
+        }
+
+        address {
+            font-size: ($fs + 3px);
+        }
+    }
+
+    .footer-txt {
+        p {
+            margin-top: 1.67vw;
+        }
+    }
+
+    // 푸터 끝
+}
+
+@include mobS {
+
+    // 푸터
+    .footer {
+        .inner {
+            strong {
+                font-size: ($fs - 6px);
+            }
+        }
+    }
+
+    .footer-logo {
+        flex-direction: column;
+    }
+
+    .footer-txt {
+        p {
+            margin-top: 8px;
+            font-size: ($fs - 6px);
+        }
+    }
+
+    // 푸터 끝
+}
+
+// 미디어쿼리 끝

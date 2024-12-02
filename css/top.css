@@ -1,0 +1,211 @@
+@import url("./fonts/fonts.css");
+.go-top .inner a, .quick .inner a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.go-top .inner a, .go-top .inner, .quick .inner a, .quick .inner {
+  width: 100%;
+  height: 100%;
+}
+
+.g {
+  color: #258968;
+}
+
+.r {
+  color: #F0532A;
+}
+
+.b {
+  color: #222;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.bold {
+  font-weight: 600 !important;
+}
+
+.title {
+  font-size: 42px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.main {
+  margin-bottom: 120px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.go-top .inner a, .quick .inner a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.go-top .inner a, .go-top .inner, .quick .inner a, .quick .inner {
+  width: 100%;
+  height: 100%;
+}
+
+.g {
+  color: #258968;
+}
+
+.r {
+  color: #F0532A;
+}
+
+.b {
+  color: #222;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.bold {
+  font-weight: 600 !important;
+}
+
+.title {
+  font-size: 42px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.main {
+  margin-bottom: 120px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.quick {
+  display: none;
+  width: 80px;
+  height: 85px;
+  background: #FAE100;
+  position: fixed;
+  right: 0;
+  bottom: 100px;
+  z-index: 11;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+.quick .inner a {
+  flex-direction: column;
+}
+.quick .inner a img {
+  width: 50%;
+}
+.quick .inner a p {
+  font-size: 13px;
+  text-align: center;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.go-top {
+  display: none;
+  width: 80px;
+  height: 80px;
+  background: #009FA8;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  border-radius: 30px 0px 0px;
+  z-index: 11;
+}
+.go-top .inner a i {
+  color: #fff;
+  font-size: 26px;
+}
+
+@media (max-width: 1280px) {
+  .quick {
+    width: 6.25vw;
+    height: 6.64vw;
+  }
+  .quick .inner a p {
+    font-size: 1.02vw;
+  }
+  .go-top {
+    width: 6.25vw;
+    height: 6.25vw;
+  }
+  .go-top .inner a i {
+    font-size: 2.03vw;
+  }
+}
+@media (max-width: 1024px) {
+  .quick {
+    width: 64px;
+    height: 66px;
+    bottom: 9.77vw;
+  }
+  .quick .inner a p {
+    font-size: 10px;
+  }
+  .go-top {
+    width: 64px;
+    height: 64px;
+  }
+  .go-top .inner a i {
+    font-size: 21px;
+  }
+}
+@media (max-width: 768px) {
+  .quick {
+    width: 8.33vw;
+    height: 8.59vw;
+  }
+  .go-top {
+    width: 8.34vw;
+    height: 8.34vw;
+  }
+  .go-top .inner a i {
+    font-size: 2.74vw;
+  }
+}
+@media (max-width: 600px) {
+  .quick {
+    width: 48px;
+    height: 49px;
+    bottom: 60px;
+  }
+  .quick .inner a p {
+    display: none;
+  }
+  .go-top {
+    width: 50px;
+    height: 50px;
+  }
+  .go-top .inner a i {
+    font-size: 16px;
+  }
+}/*# sourceMappingURL=top.css.map */

@@ -1,0 +1,170 @@
+@import url("../fonts/fonts.css");
+.recruit-download a, .recruit-download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recruit-download, .recruit-img img, .recruit-img {
+  width: 100%;
+}
+
+.g {
+  color: #258968;
+}
+
+.r {
+  color: #F0532A;
+}
+
+.b {
+  color: #222;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.bold {
+  font-weight: 600 !important;
+}
+
+.title {
+  font-size: 42px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.main {
+  margin-bottom: 120px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.recruit-download a, .recruit-download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recruit-download, .recruit-img img, .recruit-img {
+  width: 100%;
+}
+
+.g {
+  color: #258968;
+}
+
+.r {
+  color: #F0532A;
+}
+
+.b {
+  color: #222;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.bold {
+  font-weight: 600 !important;
+}
+
+.title {
+  font-size: 42px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.main {
+  margin-bottom: 120px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.recruit-cnt {
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+  padding: 50px 0;
+}
+
+.recruit-img img {
+  overflow: hidden;
+}
+
+.recruit-download {
+  text-align: center;
+  margin: 20px auto 0;
+}
+.recruit-download a {
+  background: #F0532A;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  height: 100px;
+  width: 400px;
+}
+.recruit-download a.recruit-icon {
+  width: 8%;
+  background: #FB643D;
+}
+.recruit-download i {
+  right: 50px;
+  color: #fff;
+  font-size: 24px;
+}
+
+@media (max-width: 1024px) {
+  .recruit-cnt {
+    padding: 4.88vw 0;
+  }
+  .recruit-download a {
+    width: 39.06vw;
+    font-size: 1.95vw;
+    height: 9.77vw;
+  }
+  .recruit-download a i {
+    font-size: 2.34vw;
+  }
+}
+@media (max-width: 768px) {
+  .recruit-cnt {
+    padding: 37px 0;
+  }
+  .recruit-download a {
+    font-size: 15px;
+    height: 75px;
+  }
+  .recruit-download a i {
+    font-size: 18px;
+  }
+}
+@media (max-width: 480px) {
+  .recruit-download a {
+    width: 187px;
+  }
+  .recruit-download a.recruit-icon {
+    width: 37px;
+  }
+}/*# sourceMappingURL=recruit.css.map */

@@ -1,0 +1,446 @@
+@import 'variables';
+@import 'mixin';
+@import url('./fonts/fonts.css');
+
+
+// 팝업
+.popup {
+    @include wh(100%, 100vh);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.7);
+
+    .inner {
+        @extend %justify-center;
+        flex-direction: column;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        img {
+            width: 500px;
+        }
+    }
+}
+
+.closed-btn {
+    @extend %justify-center;
+    align-items: flex-end;
+    margin-bottom: 20px;
+
+    a {
+        @extend %align-center;
+        @extend %h100;
+
+        i {
+            margin-left: 5px;
+            color: $w;
+            font-size: ($fs + 4px);
+            margin-bottom: 1.5px;
+        }
+    }
+}
+
+.not-today {
+    button {
+        color: $w;
+        font-size: ($fs + 2px);
+    }
+}
+
+.popup-img {
+    @extend %align-center;
+    gap: 10px;
+}
+
+// 팝업 끝
+
+// 전체 레이아웃
+
+// 메인
+.wrapper {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+
+// 비주얼
+@keyframes zoom {
+    0% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animate {
+    animation: zoom 3.8s infinite !important;
+}
+
+.mainSwiper {
+    @include wh(100%, 100vh);
+
+    .swiper-slide {
+        @extend %wh100;
+        overflow: hidden;
+        position: relative;
+    }
+
+    img {
+        @extend %wh100;
+    }
+}
+
+.slide-copy {
+    position: absolute;
+    right: 18%;
+    top: 34%;
+    z-index: 1;
+    font-size: ($fs + 24px);
+
+    span {
+        color: $r;
+        font-family: 'NotoSerifKR';
+
+        // &:last-child {
+        //     font-family: 'Noto Sans KR';
+        //     font-weight: 600;
+        //     color: $r;
+        // }
+
+        span {
+            font-weight: 600;
+        }
+    }
+
+    span.title-small {
+        font-size: ($fs + 18px);
+    }
+}
+
+// 비주얼 끝
+
+// 비디오
+.line {
+    &::after {
+        content: '';
+        display: block;
+        @include wh(1px, 80px);
+        background: $r;
+        margin: 0 auto;
+    }
+}
+
+.video-title {
+    margin-bottom: 100px;
+
+    h2 {
+        font-family: 'NotoSerifKR';
+        color: $r;
+    }
+
+    h3 {
+        color: $r;
+        margin-top: 20px;
+        font-family: 'Noto SB';
+    }
+
+    p {
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
+.video-img {
+    width: 95%;
+    margin: 0 auto;
+    @extend %flex-center;
+
+    img {
+        @extend %w100;
+    }
+}
+
+.video-src {
+    background: black;
+    max-width: 1300px;
+    height: 700px;
+    margin: 0 auto;
+
+    video {
+        @extend %wh100;
+    }
+}
+
+// 비디오 끝
+
+// 협력업체 등록
+.mgm-btn {
+    display: none;
+    max-width: 1300px;
+    text-align: right;
+    margin: 80px auto;
+
+    .inner {
+        @extend %flex;
+        justify-content: flex-end;
+        gap: 3px;
+        flex-wrap: wrap;
+    }
+
+    a {
+        background: $r;
+        padding: 10px;
+        border-radius: 3px;
+        color: $w;
+        font-size: ($fs - 1px);
+    }
+}
+
+// 협력업체 등록
+// 메인 끝
+
+// 전체 레이아웃 끝
+
+// 미디어쿼리
+@include desktop {
+
+    // 비디오
+    .video-src {
+        width: 95.17vw;
+        height: 51.24vw;
+    }
+
+    // 비디오 끝
+
+    .mgm-btn {
+        width: 95.17vw;
+    }
+}
+
+@include pc {}
+
+@include tabL {
+
+    // 팝업
+    .popup {
+        .inner {
+            img {
+                width: 48.83vw;
+            }
+        }
+    }
+
+    .not-today {
+        button {
+            font-size: 1.76vw;
+        }
+    }
+
+    .closed-btn {
+        a {
+            i {
+                font-size: 1.95vw;
+            }
+        }
+    }
+
+    // 팝업 끝
+
+    // 비주얼
+    .slide-copy {
+        text-align: center;
+        width: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 3.91vw;
+
+        span {
+            color: $w;
+        }
+
+        span.title-small {
+            font-size: 3.30vw;
+        }
+    }
+
+    // 비주얼 끝
+
+    // 비디오
+    .video-title {
+        margin-bottom: 9.77vw;
+
+        h2,
+        h3 {
+            font-size: 4.10vw;
+        }
+
+        h2 {
+            margin-top: 4.88vw;
+        }
+
+        h3 {
+            margin-top: 2.3vw;
+        }
+
+        p {
+            margin-top: 1.95vw;
+        }
+    }
+
+    // 비디오 끝
+
+    // 푸터
+    .footer-txt {
+        margin-top: 1.95vw;
+    }
+
+    // 푸터 끝
+
+    // 협력업체 등록
+    .mgm-btn {
+        display: block;
+    }
+
+    // 협력업체 등록 끝
+
+}
+
+@include tabS {
+
+    // 팝업
+
+    .not-today {
+        button {
+            font-size: ($fs - 2px);
+        }
+    }
+
+    .closed-btn {
+        a {
+            i {
+                font-size: ($fs - 1px);
+            }
+        }
+    }
+
+    // 팝업 끝
+
+    // 비디오
+    .video-title {
+
+        p {
+            margin-top: 15px;
+        }
+    }
+
+    // 비디오 끝
+
+}
+
+@include mobL {
+
+    // 비주얼
+    .slide-copy {
+        font-size: ($fs + 6px);
+
+        span {
+            font-size: ($fs + 6px);
+        }
+
+        span.title-small {
+            font-size: ($fs + 4px)
+        }
+    }
+
+    // 비주얼 끝
+
+    // 협력업체 등록
+    .mgm-btn {
+
+        a {
+            padding: 1.67vw;
+            font-size: 2.50vw;
+        }
+    }
+
+    // 협력업체 등록
+
+}
+
+@include mobS {
+
+    // 팝업
+    .popup {
+        .inner {
+            top: 50%;
+
+            img {
+                width: 205px;
+            }
+        }
+    }
+
+    .not-today {
+        button {
+            font-size: ($fs - 3px);
+        }
+    }
+
+    .popup-img {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .closed-btn {
+        margin-bottom: 3px;
+    }
+
+    // 팝업 끝
+
+    // 비디오 
+    .video-title {
+        margin-bottom: 47px;
+
+        h2,
+        h3 {
+            font-size: ($fs + 4px);
+        }
+
+        h2 {
+            margin-top: 23px;
+        }
+
+        h3 {
+            margin-top: 11px;
+        }
+
+        p {
+            font-size: ($fs - 2px);
+        }
+    }
+
+    // 비디오 끝
+
+    // 협력업체 등록
+    .mgm-btn {
+
+        a {
+            padding: 8px;
+            font-size: ($fs - 4px);
+        }
+    }
+
+    // 협력업체 등록
+
+}
+
+// 미디어쿼리 끝

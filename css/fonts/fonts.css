@@ -1,0 +1,42 @@
+/* Noto Sans */
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-display: swap;
+    font-weight: 500;
+    src: url('./NotoSansKR-Regular.ttf') format('woff');
+}
+
+@font-face {
+    font-family: 'Noto SB';
+    font-display: swap;
+    font-weight: 500;
+    src: url('./NotoSansKR-SemiBold.ttf') format('woff');
+}
+
+@font-face {
+    font-family: 'Noto B';
+    font-display: swap;
+    font-weight: 500;
+    src: url('./NotoSansKR-SemiBold.ttf') format('woff');
+}
+
+@font-face {
+    font-family: 'Noto EB';
+    font-display: swap;
+    font-weight: 500;
+    src: url('./NotoSansKR-ExtraBold.ttf') format('woff');
+}
+
+@font-face {
+    font-family: 'Noto L';
+    font-display: swap;
+    font-weight: 500;
+    src: url('./NotoSansKR-Light.ttf') format('woff');
+}
+
+@font-face {
+    font-family: 'NotoSerifKR';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NotoSerifKR.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

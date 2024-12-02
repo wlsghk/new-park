@@ -1,0 +1,352 @@
+@import url("../fonts/fonts.css");
+.register-agree {
+  display: flex;
+  justify-content: center;
+}
+
+.register-cnt table {
+  width: 100%;
+}
+
+.register-notice p span {
+  display: block;
+}
+
+.g {
+  color: #258968;
+}
+
+.r {
+  color: #F0532A;
+}
+
+.b {
+  color: #222;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.bold {
+  font-weight: 600 !important;
+}
+
+.title {
+  font-size: 42px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.main {
+  margin-bottom: 120px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.register-agree {
+  display: flex;
+  justify-content: center;
+}
+
+.register-cnt table {
+  width: 100%;
+}
+
+.register-notice p span {
+  display: block;
+}
+
+.g {
+  color: #258968;
+}
+
+.r {
+  color: #F0532A;
+}
+
+.b {
+  color: #222;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.bold {
+  font-weight: 600 !important;
+}
+
+.title {
+  font-size: 42px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.main {
+  margin-bottom: 120px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.header {
+  top: 0;
+}
+
+.register {
+  padding-top: 200px;
+  margin: 0 auto;
+  width: 1300px;
+}
+.register .inner h2 {
+  font-weight: 600;
+}
+
+.register-cnt {
+  margin-bottom: 70px;
+}
+.register-cnt h3 {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.register-cnt table {
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+}
+.register-cnt table th {
+  background: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+}
+.register-cnt table th,
+.register-cnt table td {
+  text-align: center;
+  padding: 13px;
+  font-size: 17px;
+}
+.register-cnt table.register-input tr:last-child th,
+.register-cnt table.register-input tr:last-child td {
+  border: none;
+}
+.register-cnt table.register-input td {
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.register-cnt table.register-input input[type=text], .register-cnt table.register-input input[type=password],
+.register-cnt table.register-input select {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.register-cnt table.register-input input[type=text] {
+  width: 70%;
+}
+.register-cnt table.register-input select {
+  width: 22.55%;
+  margin-right: 0.52vw;
+}
+.register-cnt table.register-input .select-like {
+  width: 70%;
+}
+
+.register-notice {
+  background: #f8f8f8;
+  padding: 20px;
+  line-height: 25px;
+  max-height: 250px;
+  overflow-y: auto;
+  border-radius: 5px;
+}
+.register-notice p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+.register-notice p span {
+  margin-bottom: 5px;
+}
+.register-notice::-webkit-scrollbar {
+  width: 6px;
+  display: block;
+}
+.register-notice::-webkit-scrollbar-track {
+  background: #ddd;
+  border-radius: 5px;
+}
+.register-notice::-webkit-scrollbar-thumb {
+  background: #F0532A;
+  border-radius: 10px;
+}
+
+.register-agree {
+  margin-top: 20px;
+  gap: 30px;
+}
+.register-agree label {
+  font-size: 17px;
+}
+
+.register-btn input[type=submit] {
+  padding: 15px 50px;
+  border: none;
+  background: #F0532A;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 17px;
+}
+.register-btn input[type=submit]:hover {
+  background: #fb643d;
+}
+
+.apply-subtitle {
+  margin-bottom: 30px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.apply-notice {
+  overflow-y: hidden;
+}
+.apply-notice p {
+  margin-bottom: 0;
+  font-size: 18px;
+}
+
+@media (max-width: 1366px) {
+  .register {
+    padding-top: 19.53vw;
+    width: 95.17vw;
+  }
+}
+@media (max-width: 1024px) {
+  .register .inner h2 {
+    font-size: 3.71vw;
+  }
+  .register-cnt {
+    margin-bottom: 6.84vw;
+  }
+  .register-cnt h3 {
+    margin-bottom: 1.95vw;
+    font-size: 1.95vw;
+  }
+  .register-cnt table th,
+  .register-cnt table td {
+    padding: 1.27vw;
+    font-size: 1.66vw;
+  }
+  .register-notice {
+    max-height: 24.41vw;
+  }
+  .register-notice p {
+    font-size: 13px;
+  }
+  .register-agree {
+    margin-top: 1.95vw;
+    gap: 2.93vw;
+  }
+  .register-agree label {
+    font-size: 1.66vw;
+  }
+  .register-input label {
+    font-size: 1.66vw;
+  }
+  .register-input input,
+  .register-input select {
+    font-size: 1.56vw;
+  }
+  .register-input select option {
+    font-size: 1.56vw;
+  }
+  .register-btn input[type=submit] {
+    padding: 1.46vw 4.88vw;
+    font-size: 1.66vw;
+  }
+  .apply-subtitle {
+    font-size: 1.76vw;
+  }
+  .apply-notice p {
+    font-size: 1.76vw;
+  }
+}
+@media (max-width: 768px) {
+  .register-cnt {
+    margin-bottom: 52px;
+  }
+  .register-cnt h3 {
+    margin-bottom: 15px;
+    font-size: 15px;
+  }
+  .register-cnt table th,
+  .register-cnt table td {
+    padding: 10px;
+    font-size: 13px;
+  }
+  .register-notice {
+    max-height: 187px;
+    padding: 2.6vw;
+    line-height: 3.26vw;
+  }
+  .register-agree {
+    margin-top: 15px;
+  }
+  .register-agree label {
+    font-size: 13px;
+  }
+  .register-input label {
+    font-size: 13px;
+  }
+  .register-input input,
+  .register-input select {
+    height: 30px;
+    font-size: 12px;
+  }
+  .register-input select option {
+    font-size: 12px;
+  }
+  .register-btn input[type=submit] {
+    height: 40px;
+    font-size: 13px;
+  }
+  .apply-subtitle {
+    font-size: 14px;
+  }
+  .apply-notice p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 600px) {
+  .register {
+    padding-top: 117px;
+  }
+  .register .inner h2 {
+    font-size: 22px;
+  }
+  .register-notice {
+    padding: 16px;
+    line-height: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .register-input table th,
+  .register-input table th {
+    padding: 2.08vw;
+  }
+}/*# sourceMappingURL=register.css.map */

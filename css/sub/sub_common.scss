@@ -1,0 +1,399 @@
+@import '../variables';
+@import '../mixin';
+@import url('../fonts/fonts.css');
+
+// 서브 공통
+.sub {
+    margin-top: 120px;
+}
+
+.subtitle {
+    font-size: ($fs + 1px);
+    text-align: center;
+}
+
+// 서브 공통 끝
+
+// 비주얼
+.subV {
+    @include wh(100vw, 100vh);
+    overflow: hidden;
+
+    .inner {
+        @extend %wh100;
+    }
+}
+
+.subV-img {
+    position: relative;
+    @extend %wh100;
+
+    img {
+        @extend %wh100;
+    }
+}
+
+// 스크롤 유도
+.scroll-down {
+    @include wh(20px, 40px);
+    position: absolute;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    bottom: 8%;
+    border: 1px solid $w;
+    border-radius: 60px;
+
+    &::before {
+        content: '';
+        @include wh(5px, 5px);
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: $w;
+        border-radius: 50%;
+        opacity: 1;
+        animation: wheel 2s infinite;
+        -webkit-animation: wheel 2s infinite;
+    }
+}
+
+.scroll {
+    p {
+        position: absolute;
+        z-index: 1;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        bottom: 5%;
+        color: $w;
+    }
+}
+
+@keyframes wheel {
+    to {
+        opacity: 0;
+        top: 40px;
+    }
+}
+
+@-webkit-keyframes wheel {
+    to {
+        opacity: 0;
+        top: 40px;
+    }
+}
+
+// 스크롤 유도 끝
+// 비주얼 끝
+
+// 라인
+.line {
+    &::after {
+        content: '';
+        display: block;
+        @include wh(1px, 50px);
+        background: $g;
+        margin: 30px auto;
+    }
+}
+
+// 라인 끝
+
+// 라디오박스
+.radio_box {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* 기본 라디오 버튼 숨기기 */
+.radio_box input[type="radio"], .radio_box input[type="checkbox"] {
+    display: none;
+}
+
+/* 선택되지 않은 라디오 버튼 스타일 꾸미기 */
+.on {
+    width: 20px;
+    height: 20px;
+    background: #ddd;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* 선택된 라디오 버튼 스타일 꾸미기 */
+.radio_box {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 10px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* 기본 라디오 버튼 숨기기 */
+.radio_box input[type="radio"], .radio_box input[type="checkbox"] {
+    display: none;
+}
+
+/* 선택된 라디오 버튼 스타일 꾸미기 */
+.radio_box {
+    input[type="radio"]:checked+.on, input[type="checkbox"]:checked+.on {
+        background: $m;
+
+        &::after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+    }
+
+    input[type="radio"]:checked+.on::after, input[type="checkbox"]:checked+.on::after {
+        display: block;
+    }
+
+    /* 선택되지 않은 라디오 버튼 스타일 꾸미기 */
+    .on {
+        @include wh(20px, 20px);
+        background: #ddd;
+        border-radius: 50%;
+        position: absolute;
+        top: 2px;
+        left: 0;
+    }
+
+    .on {
+        &::after {
+            @include wh(10px, 10px);
+            background: $w;
+            border-radius: 50%;
+            position: absolute;
+            left: 5px;
+            top: 5px;
+        }
+    }
+}
+
+// 라디오박스 끝
+
+// 링크
+.download {
+    margin-top: 50px;
+    @extend %flex;
+    flex-direction: column;
+    color: $r;
+
+    a {
+        font-size: ($fs - 1px);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+
+        i {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            color: $r;
+        }
+    }
+}
+
+// 링크 끝
+
+// 목록 버튼
+.list-btn {
+    margin-top: 50px;
+    text-align: center;
+
+    a {
+        display: inline-block;
+        width: 150px;
+        text-align: center;
+        padding: 15px 50px;
+        border: none;
+        background: $r;
+        color: $w;
+        border-radius: 5px;
+        font-size: ($fs + 1px);
+    }
+}
+
+// 목록 버튼 끝
+
+// 미디어쿼리
+@include pc {
+    .sub {
+        margin-top: 9.38vw;
+    }
+}
+
+@include tabL {
+
+    // 서브 공통
+
+
+    // 서브 공통 끝
+
+    // // 비주얼
+    // .subV {
+    //     height: 89.75vw;
+    // }
+    // // 비주얼 끝
+
+    // 라인
+    .line {
+        &::after {
+            margin: 2.93vw auto;
+        }
+    }
+
+    // 라인 끝
+
+    // 라디오박스
+    .radio_box {
+        padding-left: 2.44vw;
+
+        .on {
+            @include wh(1.95vw, 1.95vw);
+
+            &::after {
+                @include wh(0.98vw, 0.98vw);
+                left: 0.49vw;
+                top: 0.49vw;
+            }
+        }
+    }
+
+    // 라디오박스 끝
+
+    // 다운로드
+    .download {
+        a {
+            font-size: 1.46vw;
+
+            i {
+                font-size: 1.46vw;
+            }
+        }
+    }
+
+    // 다운로드 끝
+
+    // 목록 버튼
+    .list-btn {
+        margin-top: 4.88vw;
+
+        a {
+            width: 14.65vw;
+            padding: 1.46vw 4.88vw;
+            font-size: 1.66vw;
+        }
+    }
+
+    // 목록 버튼 끝
+}
+
+@include tabS {
+
+    // 비주얼
+    .subV {
+        height: 119.66vw;
+    }
+
+    // 비주얼 끝
+
+    // 라인
+    .line {
+        &::after {
+            margin: 23px auto;
+        }
+    }
+
+    // 라인 끝
+
+    // 라디오박스
+    .radio_box {
+        padding-left: 19px;
+
+        .on {
+            @include wh(15px, 15px);
+
+            &::after {
+                @include wh(8px, 8px);
+                left: 3.5px;
+                top: 3.5px;
+            }
+        }
+    }
+
+    // 라디오박스 끝
+
+    // 다운로드 끝
+    .download {
+        a {
+            font-size: ($fs - 5px);
+
+            i {
+                font-size: ($fs - 5px);
+            }
+        }
+    }
+
+    // 다운로드 끝
+
+    // 목록 버튼
+    .list-btn {
+        margin-top: 37px;
+
+        a {
+            width: 113px;
+            padding: 11px 37px;
+            font-size: ($fs - 3px);
+        }
+    }
+
+    // 목록 버튼 끝
+}
+
+@include mobL {
+    // 서브 공통
+
+    .sub {
+        margin-top: 56px;
+    }
+
+    // 서브 공통
+
+    // 스크롤 유도
+    .scroll-down {
+        @include wh(3.33vw, 6.67vw);
+    }
+
+    // 스크롤 유도 끝
+}
+
+@include mobS {
+
+    // 스크롤 유도
+    .scroll-down {
+        @include wh(16px, 32px);
+    }
+
+    // 스크롤 유도 끝
+}
+
+// 미디어쿼리 끝

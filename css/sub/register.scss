@@ -1,0 +1,382 @@
+@import '../variables';
+@import '../mixin';
+@import url('../fonts/fonts.css');
+
+// 헤더
+.header {
+    top: 0;
+}
+
+// 헤더 끝
+
+// 등록
+.register {
+    padding-top: 200px;
+    margin: 0 auto;
+    width: 1300px;
+
+    .inner {
+        h2 {
+            font-weight: 600;
+        }
+    }
+}
+
+.register-cnt {
+    margin-bottom: 70px;
+
+    h3 {
+        margin-bottom: 20px;
+        font-size: ($fs + 4px);
+    }
+
+    table {
+        @extend %w100;
+        border-top: 1px solid $b;
+        border-bottom: 1px solid $b;
+
+        th {
+            background: #f8f8f8;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            text-align: center;
+            padding: 13px;
+            font-size: ($fs + 1px);
+        }
+    }
+
+    table.register-input {
+        tr:last-child {
+
+            th,
+            td {
+                border: none;
+            }
+        }
+
+        td {
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        input[type=text], input[type=password],
+        select {
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        input[type=text] {
+            width: 70%;
+        }
+
+        select {
+            width: 22.55%;
+            margin-right: 0.52vw;
+        }
+
+        .select-like {
+            width: 70%;
+        }
+    }
+}
+
+.register-notice {
+    background: #f8f8f8;
+    padding: 20px;
+    line-height: 25px;
+    max-height: 250px;
+    overflow-y: auto;
+    border-radius: 5px;
+
+    p {
+        font-size: ($fs - 2px);
+        margin-bottom: 15px;
+
+        span {
+            @extend %db;
+            margin-bottom: 5px;
+        }
+    }
+
+    &::-webkit-scrollbar {
+        width: 6px;
+        display: block;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #ddd;
+        border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $r;
+        border-radius: 10px;
+    }
+}
+
+.register-agree {
+    @extend %justify-center;
+    margin-top: 20px;
+    gap: 30px;
+
+    label {
+        font-size: ($fs + 1px);
+    }
+}
+
+.register-btn {
+    input[type=submit] {
+        padding: 15px 50px;
+        border: none;
+        background: $r;
+        color: $w;
+        border-radius: 5px;
+        font-size: ($fs + 1px);
+    }
+
+    input[type=submit]:hover {
+        background: #fb643d;
+    }
+}
+
+// 등록 끝
+
+// 신청
+.apply-subtitle {
+    margin-bottom: 30px;
+    font-size: ($fs + 2px);
+    line-height: 1.5;
+}
+
+.apply-notice {
+    overflow-y: hidden;
+
+    p {
+        margin-bottom: 0;
+        font-size: ($fs + 2px);
+    }
+}
+
+// 신청 끝
+
+// 미디어쿼리
+@include desktop {
+
+    // 등록
+    .register {
+        padding-top: 19.53vw;
+        width: 95.17vw;
+    }
+
+    // 등록 끝
+}
+
+@include tabL {
+
+    // 등록
+    .register {
+        .inner {
+            h2 {
+                font-size: 3.71vw;
+            }
+        }
+    }
+
+    .register-cnt {
+        margin-bottom: 6.84vw;
+
+        h3 {
+            margin-bottom: 1.95vw;
+            font-size: 1.95vw;
+        }
+
+        table {
+
+            th,
+            td {
+                padding: 1.27vw;
+                font-size: 1.66vw;
+            }
+        }
+    }
+
+    .register-notice {
+        max-height: 24.41vw;
+
+        p {
+            font-size: ($fs - 3px);
+        }
+    }
+
+    .register-agree {
+        margin-top: 1.95vw;
+        gap: 2.93vw;
+
+        label {
+            font-size: 1.66vw;
+        }
+    }
+
+    .register-input {
+        label {
+            font-size: 1.66vw;
+        }
+
+        input,
+        select {
+            font-size: 1.56vw;
+        }
+
+        select {
+            option {
+                font-size: 1.56vw;
+            }
+        }
+    }
+
+    .register-btn {
+        input[type=submit] {
+            padding: 1.46vw 4.88vw;
+            font-size: 1.66vw;
+        }
+    }
+
+    // 등록 끝
+
+    // 신청
+    .apply-subtitle {
+        font-size: 1.76vw;
+    }
+
+    .apply-notice {
+        p {
+            font-size: 1.76vw;
+        }
+    }
+
+    // 신청 끝
+}
+
+@include tabS {
+
+    // 등록
+
+    .register-cnt {
+        margin-bottom: 52px;
+
+        h3 {
+            margin-bottom: 15px;
+            font-size: ($fs - 1px);
+        }
+
+        table {
+
+            th,
+            td {
+                padding: 10px;
+                font-size: ($fs - 3px);
+            }
+        }
+    }
+
+    .register-notice {
+        max-height: 187px;
+        padding: 2.6vw;
+        line-height: 3.26vw;
+
+        // p {
+        //     font-size: 1.82vw;
+        // }
+    }
+
+    .register-agree {
+        margin-top: 15px;
+
+        label {
+            font-size: ($fs - 3px);
+        }
+    }
+
+    .register-input {
+        label {
+            font-size: ($fs - 3px);
+        }
+
+        input,
+        select {
+            height: 30px;
+            font-size: ($fs - 4px);
+        }
+
+        select {
+            option {
+                font-size: ($fs - 4px);
+            }
+        }
+    }
+
+    .register-btn {
+        input[type=submit] {
+            height: 40px;
+            font-size: ($fs - 3px);
+        }
+    }
+
+    // 등록 끝
+
+    // 신청
+    .apply-subtitle {
+        font-size: ($fs - 2px);
+    }
+
+    .apply-notice {
+        p {
+            font-size: ($fs - 2px);
+        }
+    }
+
+    // 신청 끝
+}
+
+@include mobL {
+
+    // 등록
+    .register {
+        padding-top: 117px;
+
+        .inner {
+            h2 {
+                font-size: ($fs + 6px);
+            }
+        }
+    }
+
+    .register-notice {
+        padding: 16px;
+        line-height: 20px;
+    }
+
+    // 등록 끝
+}
+
+@include mobS {
+
+    // 등록
+    .register-input {
+        table {
+
+            th,
+            th {
+                padding: 2.08vw;
+            }
+        }
+    }
+
+    // 등록 끝
+}
+
+// 미디어쿼리 끝

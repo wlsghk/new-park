@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- IOS 설정 -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- XEIcon -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../css/fonts/fonts.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/gnb.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/top.css">
+    <link rel="stylesheet" href="../css/sub/sub_common.css">
+    <!-- 개별 css -->
+    <link rel="stylesheet" href="../css/sub/notice.css">
+    <link rel="stylesheet" href="../css/sub/recruit.css">
+    <title>The New Grey For You!</title>
+</head>
+
+<body>
+    <!-- 전체 레이아웃 -->
+    <div class="wrapper">
+        <!-- gnb 메뉴 -->
+        <? include "../gnb.html"?>
+        <!-- // gnb 메뉴 -->
+        <!-- 헤더 -->
+        <? include "../header.html"?>
+        <!-- // 헤더 -->
+        <!-- 메인 -->
+        <main class="main">
+            <article class="inner">
+                <!-- 입소자 공고 -->
+                <section class="sub notice">
+                    <div class="inner">
+                        <h2 class="title">입소자 모집공고</h2>
+                        <div class="line"></div>
+
+                        <div class="recruit-cnt">
+                            <div class="recruit-img">
+                                <img src="../img/recruit-m.png" alt="입소자 모집공고 비주얼 이미지">
+                            </div>
+                            <div class="recruit-download">
+                                <a href="../img/recruit.png" target="_blank">
+                                    입소자 모집공고
+                                    <br>자세히 보기
+                                </a>
+                                <a href="../img/recruit.png" target="_blank" class="recruit-icon">
+                                    <i class="fa-solid fa-file-arrow-down"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- // 입소자 공고 -->
+            </article>
+        </main>
+        <!-- // 메인 -->
+        <!-- 푸터 -->
+        <? include "../footer.html"?>
+        <!-- // 푸터 -->
+        <!-- 탑 버튼 -->
+        <div class="go-top" id="top-btn">
+            <div class="inner">
+                <a href="#">
+                    <i class="xi-arrow-up"></i>
+                </a>
+            </div>
+        </div>
+        <!-- // 탑 버튼 -->
+    </div>
+    <!-- // 전체 레이아웃 -->
+
+    <!-- jQuery 연결 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- 지역 api -->
+    <script type="application/javascript"
+        src="https://zelkun.tistory.com/attachment/cfile8.uf@99BB7A3D5D45C065343307.js"></script>
+    <!-- top.js 연결 -->
+    <script src="../js/top.js"></script>
+    <!-- notice.js 연결 -->
+    <script src="../js/notice.js"></script>
+    <!-- fontawsome -->
+    <script src="https://kit.fontawesome.com/19d7485b13.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+@import '../variables';
+@import '../mixin';
+@import url('../fonts/fonts.css');
+
+// 헤더
+.header {
+    top: 0;
+}
+
+// 헤더 끝
+
+// 광고
+.ad-list {
+    border-top: 1px solid $b;
+    border-bottom: 1px solid $b;
+    @extend %w100;
+    margin-top: 50px;
+    @include grid(grid, repeat(3, 1fr));
+    justify-items: center;
+}
+
+.ad-cnt {
+    @extend %w100;
+    margin-bottom: 50px;
+
+    h3 {
+        text-align: center;
+        width: 90%;
+        font-size: ($fs + 4px);
+    }
+}
+
+.ad-box {
+    width: 90%;
+    height: 220px;
+    margin: 50px 0 20px;
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+
+    img {
+        @extend %wh100;
+        position: absolute;
+        border-radius: 20px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid #ddd;
+    }
+
+    audio,
+    video {
+        @extend %wh100;
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+// 광고 끝
+
+// 모바일쿼리
+@include desktop {
+
+    // 광고
+
+    .ad-box {
+        height: 16.11vw;
+    }
+
+    // 광고 끝
+}
+
+@include tabL {
+
+    // 광고
+    .ad-list {
+        margin-top: 4.88vw;
+    }
+
+    .ad-cnt {
+        h3 {
+            font-size: 1.95vw;
+        }
+    }
+
+    // 광고 끝
+}
+
+@include tabS {
+
+    // 광고
+    .ad-list {
+        margin-top: 37px;
+        @include grid(grid, repeat(2, 1fr));
+    }
+
+    .ad-cnt {
+        margin-bottom: 6.51vw;
+    }
+
+    .ad-box {
+        height: 24.5vw;
+        border-radius: 2.60vw;
+        margin: 6.51vw 0;
+
+        img {
+            border-radius: 2.60vw;
+        }
+    }
+
+    .ad-cnt {
+        h3 {
+            font-size: ($fs - 1px);
+        }
+    }
+
+    // 광고 끝
+}
+
+@include mobL {
+
+    // 광고
+
+    .ad-cnt {
+        margin-bottom: 39px;
+    }
+
+    .ad-box {
+        margin: 39px 0;
+    }
+
+    // 광고 끝
+}
+
+// 모바일쿼리 끝
